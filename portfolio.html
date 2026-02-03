@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laxman | Cybersecurity Analyst</title>
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #111111;
+            --text-color: #e0e0e0;
+            --accent-color: #00ff41; /* Hacker Green */
+            --secondary-accent: #008f11;
+            --font-main: 'Courier New', Courier, monospace; /* Terminal vibe */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid var(--secondary-accent);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--secondary-accent);
+        }
+
+        nav ul { display: flex; gap: 20px; }
+        nav a:hover { color: var(--accent-color); text-shadow: 0 0 5px var(--accent-color); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero span { color: var(--accent-color); }
+        
+        .typewriter {
+            overflow: hidden; 
+            white-space: nowrap; 
+            border-right: 3px solid var(--accent-color); 
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            max-width: fit-content;
+            margin: 0 auto;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 10px 25px;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            font-weight: bold;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+            color: #000;
+            box-shadow: 0 0 20px var(--secondary-accent);
+        }
+
+        /* --- SECTIONS --- */
+        section { padding: 60px 10%; }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border: 1px solid #333;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.1);
+        }
+
+        .skill-card i { font-size: 2rem; margin-bottom: 10px; display: block; }
+
+        /* --- PROJECTS --- */
+        .project-card {
+            background: var(--card-bg);
+            border-left: 3px solid var(--secondary-accent);
+            padding: 25px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 65, 0.03), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .project-card:hover::before { transform: translateX(100%); }
+
+        .project-title { color: var(--accent-color); font-size: 1.2rem; margin-bottom: 10px; }
+        .tech-stack { font-size: 0.8rem; color: #888; margin-top: 10px; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--accent-color); } }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">&lt;Laxman /&gt;</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <p>Target Aquired: 127.0.0.1</p>
+        <h1>I am <span class="glitch">Laxman</span></h1>
+        <div class="typewriter">
+            <h2>Cybersecurity Enthusiast | Cloud | Network Defense</h2>
+        </div>
+        <a href="#contact" class="btn">INITIALIZE CONTACT</a>
+    </section>
+
+    <section id="skills">
+        <h2>System Capabilities</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Networking</h3>
+                <p>TCP/IP, Subnetting, OSI Model</p>
+            </div>
+            <div class="skill-card">
+                <h3>Linux CLI</h3>
+                <p>Bash Scripting, System Hardening</p>
+            </div>
+            <div class="skill-card">
+                <h3>Penetration Testing</h3>
+                <p>Nmap, Burp Suite, Metasploit</p>
+            </div>
+            <div class="skill-card">
+                <h3>Cloud Security</h3>
+                <p>AWS Fundamentals, IAM Policies</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Mission Logs (Projects)</h2>
+        
+        <div class="project-card">
+            <div class="project-title">Network Vulnerability Analysis</div>
+            <p>Conducted comprehensive port scanning and service enumeration using Nmap scripts to identify open vectors on local servers.</p>
+            <div class="tech-stack">[ Nmap ] [ Wireshark ] [ Bash ]</div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">Cloud Infrastructure Audit</div>
+            <p>Analyzed AWS IAM roles for privilege escalation risks and secured S3 buckets against public access.</p>
+            <div class="tech-stack">[ AWS ] [ CloudTrail ] [ Python ]</div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">CTF: Hack The Box Writeups</div>
+            <p>Documented solutions for various machines, focusing on privilege escalation and reverse shell techniques.</p>
+            <div class="tech-stack">[ Linux ] [ Reverse Engineering ]</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>System Status: Online | &copy; 2026 Laxman Security</p>
+    </footer>
+
+</body>
+</html>
